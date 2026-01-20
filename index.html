@@ -7,6 +7,63 @@
 </head>
  
   <body>
+    
+     <h2> 20.01 , 2026</h2>
+    
+     </div>
+ <p><strong>1. Выбираем два простых числа <code>p</code> и <code>q</code></strong><br>
+(Простые числа — это те, что делятся только на 1 и себя.)<br>
+Возьмём, например:<br>
+<code>p = 5</code><br>
+<code>q = 7</code></p>
+
+<p><strong>2. Считаем <code>n = p × q</code></strong><br>
+<code>n = 5 × 7 = 35</code></p>
+
+<p><strong>3. Считаем <code>φ(n) = (p−1)(q−1)</code></strong><br>
+<code>φ(n) = (5−1) × (7−1) = 4 × 6 = 24</code></p>
+
+<p><strong>4. Выбираем число <code>e</code> такое, что:</strong></p>
+<ul>
+  <li><code>1 &lt; e &lt; φ(n)</code></li>
+  <li><code>e</code> и <code>φ(n)</code> взаимно простые (их НОД = 1)</li>
+</ul>
+<p>Попробуем <code>e = 5</code> → НОД(5, 24) = 1 → <span class="success">✅ подходит!</span><br>
+(Можно было взять также <code>e = 7, 11, 13, 17, 19, 23</code> — все взаимно просты с 24.)</p>
+
+<p><strong>5. Находим закрытый ключ <code>d</code></strong><br>
+Нужно найти такое число <code>d</code>, чтобы: <code>(e × d) mod φ(n) = 1</code><br>
+То есть: <code>(5 × d) mod 24 = 1</code></p>
+<p>
+  <code>d = 1</code> → 5 mod 24 = 5 <span class="fail">❌</span><br>
+  <code>d = 2</code> → 10 mod 24 = 10 <span class="fail">❌</span><br>
+  <code>d = 3</code> → 15 mod 24 = 15 <span class="fail">❌</span><br>
+  <code>d = 4</code> → 20 mod 24 = 20 <span class="fail">❌</span><br>
+  <code>d = 5</code> → 25 mod 24 = 1 <span class="success">✅</span>
+</p>
+
+<p><strong>Ключи:</strong><br>
+Открытый ключ: <code>(n, e) = (35, 5)</code> → им можно зашифровать<br>
+Закрытый ключ: <code>(n, d) = (35, 5)</code> → им можно расшифровать</p>
+
+<p><strong>Зашифруем сообщение</strong><br>
+Пусть сообщение <code>m = 2</code> («2» = «анализ готов»)<br>
+Условие: <code>m &lt; n</code> → <code>2 &lt; 35</code> → <span class="success">✅</span><br>
+Формула шифрования:<br>
+<code>C = m<sup>e</sup> mod n = 2<sup>5</sup> mod 35 = 32 mod 35 = 32</code><br>
+→ Шифротекст <code>C = 32</code></p>
+
+<p><strong>Расшифруем сообщение</strong><br>
+<code>M = C<sup>d</sup> mod n = 32<sup>5</sup> mod 35</code><br>
+<code>32<sup>5</sup> = 33 554 432</code><br>
+<code>33 554 432 mod 35 = 2</code><br>
+→ Исходное сообщение восстановлено! <span class="success">✅</span></p>
+
+<p><strong>В реальности:</strong><br>
+Число <code>n</code> содержит <strong>600+ десятичных цифр</strong> (2048–3072 бита), что делает взлом практически невозможным.</p>
+</div>
+
+    
     <h2> 19.01 , 2026</h2>
      <p> Задание 1</p>
     <p> АПЕЛЬСИН–САЦЬНВЩЮ-k=17</p>
