@@ -1,333 +1,139 @@
-/* === Сброс и базовые настройки === */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Личный блог Евелины: проекты, обучение, заметки">
+  <title>Мой блог | Дневник разработчика</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-:root {
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --secondary: #ec4899;
-  --bg-body: #f8fafc;
-  --bg-card: #ffffff;
-  --text-main: #1e293b;
-  --text-muted: #64748b;
-  --border: #e2e8f0;
-  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-  --shadow-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  --radius: 12px;
-}
+  <header class="header">
+    <div class="container header-content">
+      <h1 class="logo">✨ Блог Евелины</h1>
+      <p class="tagline">Код • Данные • Открытия</p>
+    </div>
+  </header>
 
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: var(--bg-body);
-  color: var(--text-main);
-  line-height: 1.6;
-  padding-bottom: 4rem;
-}
+  <main class="container">
+    
+    <!-- 05.05.2026 -->
+    <article class="post">
+      <time class="post-date" datetime="2026-05-05">5 мая 2026</time>
+      <div class="post-body">
+        <a href="таблица 3.ods" class="file-link" download>
+          <span class="icon">📊</span> Скачать: таблица 3
+        </a>
+      </div>
+    </article>
 
-.container {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
+    <!-- 27.04.2026 -->
+    <article class="post">
+      <time class="post-date" datetime="2026-04-27">27 апреля 2026</time>
+      <div class="post-body">
+        <a href="таблица 2.ods" class="file-link" download>
+          <span class="icon">📊</span> Скачать: таблица 2
+        </a>
+      </div>
+    </article>
 
-/* === Шапка === */
-.site-header {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: white;
-  padding: 3rem 0;
-  text-align: center;
-  margin-bottom: 2rem;
-  box-shadow: var(--shadow);
-}
+    <!-- 22.04.2026 -->
+    <article class="post">
+      <time class="post-date" datetime="2026-04-22">22 апреля 2026</time>
+      <div class="post-body">
+        <a href="tl.ods" class="file-link" download>
+          <span class="icon">📊</span> Скачать: таблица 1
+        </a>
+      </div>
+    </article>
 
-.site-header h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
+    <!-- 08.04.2026 -->
+    <article class="post">
+      <time class="post-date" datetime="2026-04-08">8 апреля 2026</time>
+      <div class="post-body">
+        <a href="pac.png" class="file-link" target="_blank" rel="noopener">
+          <span class="icon">🗄️</span> Проект базы данных (изображение)
+        </a>
+      </div>
+    </article>
 
-.subtitle {
-  opacity: 0.9;
-  font-weight: 300;
-}
+    <!-- 01.04.2026 -->
+    <article class="post">
+      <time class="post-date" datetime="2026-04-01">1 апреля 2026</time>
+      <div class="post-body">
+        <h2>🎯 Итоги обучения модели</h2>
+        <ul class="metrics">
+          <li><strong>MSE (train):</strong> 0.000261</li>
+          <li><strong>MSE (test):</strong> 0.000305</li>
+        </ul>
+      </div>
+    </article>
 
-/* === Карточки постов === */
-.post-card {
-  background: var(--bg-card);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid var(--border);
-}
+    <!-- 21.03.2026 -->
+    <article class="post">
+      <time class="post-date" datetime="2026-03-21">21 марта 2026</time>
+      <div class="post-body">
+        <h2>🤖 Датасет для КАСКО</h2>
+        <p>Точность модели: <strong>69%</strong></p>
+        <p>Генерация данных по параметрам: возраст, стаж, ДТП.</p>
+        <div class="client-card">
+          <strong>👤 Тестовый клиент:</strong>
+          <p>Возраст: 30 | Стаж: 5 лет | ДТП: 0</p>
+          <p class="accuracy">Прогноз: <span>87.5% ✅</span></p>
+        </div>
+      </div>
+    </article>
 
-.post-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
-}
+    <!-- 16.03.2026 -->
+    <article class="post">
+      <time class="post-date" datetime="2026-03-16">16 марта 2026</time>
+      <div class="post-body">
+        <h2>📚 Прогноз успеваемости</h2>
+        <p>Время обучения: <strong>5 часов</strong></p>
+        <p class="highlight">Ожидаемый балл: <span>50.23</span></p>
+      </div>
+    </article>
 
-.post-card.first-post {
-  border-left: 4px solid var(--secondary);
-}
+    <!-- 25.02.2026 -->
+    <article class="post">
+      <time class="post-date" datetime="2026-02-25">25 февраля 2026</time>
+      <div class="post-body">
+        <h2>🤖 FAQ-бот</h2>
+        <ul class="faq">
+          <li>📦 Доставка: <strong>3–5 рабочих дней</strong></li>
+          <li>💳 Оплата: наличными и картой</li>
+        </ul>
+      </div>
+    </article>
 
-/* === Даты === */
-.post-date {
-  display: inline-block;
-  font-size: 0.875rem;
-  color: var(--text-muted);
-  font-weight: 500;
-  margin-bottom: 1rem;
-  background: #f1f5f9;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-}
+    <!-- 18.02.2026 -->
+    <article class="post">
+      <time class="post-date" datetime="2026-02-18">18 февраля 2026</time>
+      <div class="post-body">
+        <h2>🐱 Классификация кошек</h2>
+        <div class="results">
+          <div class="result-row"><span class="label">Persian cat</span><span class="value">59.25%</span></div>
+          <div class="result-row"><span class="label">Egyptian Mau</span><span class="value">17.76%</span></div>
+          <div class="result-row"><span class="label">Tabby cat</span><span class="value">12.00%</span></div>
+        </div>
+      </div>
+    </article>
 
-/* === Контент === */
-.post-content h3 {
-  font-size: 1.125rem;
-  margin-bottom: 0.75rem;
-  color: var(--text-main);
-}
+    <!-- 20.01.2026 -->
+    <article class="post">
+      <time class="post-date" datetime="2026-01-20">20 января 2026</time>
+      <div class="post-body">
+        <h2>🔐 Криптография</h2>
+        <pre class="code-block"><code>Открытый ключ: (21, 5)
+Закрытый ключ: (21, 5)
+n = 1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789021</code></pre>
+      </div>
+    </article>
 
-.post-content p {
-  margin-bottom: 0.75rem;
-  color: var(--text-main);
-}
-
-.post-content ul {
-  margin-left: 1.25rem;
-  margin-bottom: 0.75rem;
-}
-
-.post-content li {
-  margin-bottom: 0.25rem;
-}
-
-/* === Ссылки и кнопки === */
-a {
-  color: var(--primary);
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-
-a:hover {
-  color: var(--primary-dark);
-  text-decoration: underline;
-}
-
-.file-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1rem;
-  background: #f8fafc;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  width: 100%;
-}
-
-.file-link:hover {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
-  text-decoration: none;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s;
-  border: none;
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: var(--primary-dark);
-  text-decoration: none;
-  color: white;
-}
-
-.btn-outline {
-  background: transparent;
-  border: 2px solid var(--primary);
-  color: var(--primary);
-}
-
-.btn-outline:hover {
-  background: var(--primary);
-  color: white;
-  text-decoration: none;
-}
-
-.link-underline {
-  border-bottom: 2px dashed var(--primary);
-}
-
-.link-underline:hover {
-  border-bottom-style: solid;
-}
-
-/* === Элементы интерфейса === */
-.stats-list, .faq-list {
-  list-style: none;
-  padding: 0;
-}
-
-.stats-list li, .faq-list li {
-  padding: 0.5rem 0;
-  border-bottom: 1px dashed var(--border);
-}
-
-.client-card {
-  background: #f0fdf4;
-  border: 1px solid #86efac;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-top: 0.75rem;
-}
-
-.accuracy {
-  margin-top: 0.5rem;
-  font-weight: 600;
-  color: #166534;
-}
-
-.accuracy span {
-  color: #15803d;
-}
-
-.highlight {
-  font-size: 1.25rem;
-  color: var(--primary-dark);
-  font-weight: 600;
-}
-
-/* === Результаты (диаграмма) === */
-.results-chart {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-}
-
-.result-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0.75rem;
-  background: #f8fafc;
-  border-radius: 6px;
-  font-size: 0.9rem;
-}
-
-.result-item .value {
-  font-weight: 600;
-  color: var(--primary);
-}
-
-/* === Код и цитаты === */
-.code-block {
-  background: #1e293b;
-  color: #e2e8f0;
-  padding: 1rem;
-  border-radius: 8px;
-  font-family: 'Courier New', monospace;
-  font-size: 0.85rem;
-  overflow-x: auto;
-  margin: 0.75rem 0;
-}
-
-.code-block .small {
-  font-size: 0.75rem;
-  color: #94a3b8;
-  margin-top: 0.5rem;
-}
-
-.quote {
-  border-left: 4px solid var(--secondary);
-  padding-left: 1rem;
-  margin: 1rem 0;
-  font-style: italic;
-  color: var(--text-muted);
-}
-
-.quote.highlight {
-  background: #fdf4ff;
-  padding: 1rem;
-  border-radius: 0 var(--radius) var(--radius) 0;
-}
-
-.quote cite {
-  display: block;
-  margin-top: 0.5rem;
-  font-style: normal;
-  font-weight: 500;
-  color: var(--text-main);
-}
-
-details {
-  margin: 0.75rem 0;
-  padding: 0.5rem;
-  background: #f8fafc;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-summary {
-  font-weight: 500;
-  color: var(--primary);
-}
-
-/* === Медиа === */
-.post-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin: 0.75rem 0;
-  display: block;
-}
-
-.media-element {
-  border-radius: 8px;
-  margin-top: 0.75rem;
-  background: #000;
-}
-
-/* === Утилиты === */
-.mt-2 { margin-top: 0.75rem; }
-.small { font-size: 0.875rem; color: var(--text-muted); }
-code {
-  background: #f1f5f9;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-family: monospace;
-  color: #dc2626;
-}
-
-/* === Футер === */
-.site-footer {
-  text-align: center;
-  padding: 2rem;
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  margin-top: 2rem;
-}
-
-/* === Адаптив === */
-@media (max-width: 640px) {
-  .site-header { padding: 2rem 0; }
-  .site-header h1 { font-size: 1.5rem; }
-  .post-card { padding: 1.25rem; }
-}
+    <!-- 19.01.2026 -->
+    <article class="post">
+      <time class
