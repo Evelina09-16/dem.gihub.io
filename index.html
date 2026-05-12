@@ -1,139 +1,267 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Личный блог Эвелины: проекты, обучение, заметки">
-  <title>Мой блог | Дневник разработчика</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Мой блог</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8f9fc;
+      color: #2d3748;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .blog {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .header {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 20px;
+      color: white;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    }
+    .header h1 { font-size: 28px; font-weight: 700; }
+    .post {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      border-left: 4px solid #667eea;
+      transition: transform 0.2s ease;
+    }
+    .post:hover { transform: translateY(-2px); }
+    .date {
+      color: #718096;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .date::before {
+      content: "📅";
+      font-size: 16px;
+    }
+    .content { color: #4a5568; font-size: 15px; }
+    .content p { margin-bottom: 8px; }
+    .content a {
+      color: #667eea;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .content a:hover { text-decoration: underline; }
+    .answer {
+      display: inline-block;
+      background: #f0f4ff;
+      color: #667eea;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: 600;
+      margin: 4px 0;
+    }
+    .quiz .content { display: flex; flex-direction: column; gap: 16px; }
+    .quiz-item {
+      padding-bottom: 16px;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .quiz-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    blockquote {
+      border-left: 3px solid #667eea;
+      padding-left: 16px;
+      color: #4a5568;
+      font-style: italic;
+      margin: 12px 0;
+    }
+    img, video {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 12px 0;
+    }
+    @media (max-width: 600px) {
+      .header { padding: 30px 15px; }
+      .header h1 { font-size: 22px; }
+      .post { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
-
-  <header class="header">
-    <div class="container header-content">
-      <h1 class="logo">✨ Блог Эвелины</h1>
-      <p class="tagline">Код • Данные • Открытия</p>
+  <div class="blog">
+    <div class="header">
+      <h1>✨ Мой блог</h1>
     </div>
-  </header>
 
-  <main class="container">
-    
-    <!-- 05.05.2026 -->
-    <article class="post">
-      <time class="post-date" datetime="2026-05-05">5 мая 2026</time>
-      <div class="post-body">
-        <a href="таблица 3.ods" class="file-link" download>
-          <span class="icon">📊</span> Скачать: таблица 3
-        </a>
-      </div>
-    </article>
-
-    <!-- 27.04.2026 -->
-    <article class="post">
-      <time class="post-date" datetime="2026-04-27">27 апреля 2026</time>
-      <div class="post-body">
-        <a href="таблица 2.ods" class="file-link" download>
-          <span class="icon">📊</span> Скачать: таблица 2
-        </a>
-      </div>
-    </article>
-
-    <!-- 22.04.2026 -->
-    <article class="post">
-      <time class="post-date" datetime="2026-04-22">22 апреля 2026</time>
-      <div class="post-body">
-        <a href="tl.ods" class="file-link" download>
-          <span class="icon">📊</span> Скачать: таблица 1
-        </a>
-      </div>
-    </article>
-
-    <!-- 08.04.2026 -->
-    <article class="post">
-      <time class="post-date" datetime="2026-04-08">8 апреля 2026</time>
-      <div class="post-body">
-        <a href="pac.png" class="file-link" target="_blank" rel="noopener">
-          <span class="icon">🗄️</span> Проект базы данных (изображение)
-        </a>
-      </div>
-    </article>
-
-    <!-- 01.04.2026 -->
-    <article class="post">
-      <time class="post-date" datetime="2026-04-01">1 апреля 2026</time>
-      <div class="post-body">
-        <h2>🎯 Итоги обучения модели</h2>
-        <ul class="metrics">
-          <li><strong>MSE (train):</strong> 0.000261</li>
-          <li><strong>MSE (test):</strong> 0.000305</li>
-        </ul>
-      </div>
-    </article>
-
-    <!-- 21.03.2026 -->
-    <article class="post">
-      <time class="post-date" datetime="2026-03-21">21 марта 2026</time>
-      <div class="post-body">
-        <h2>🤖 Датасет для КАСКО</h2>
-        <p>Точность модели: <strong>69%</strong></p>
-        <p>Генерация данных по параметрам: возраст, стаж, ДТП.</p>
-        <div class="client-card">
-          <strong>👤 Тестовый клиент:</strong>
-          <p>Возраст: 30 | Стаж: 5 лет | ДТП: 0</p>
-          <p class="accuracy">Прогноз: <span>87.5% ✅</span></p>
+    <!-- 12.05.2026 – Тест по информатике -->
+    <article class="post quiz">
+      <div class="date">12.05.2026</div>
+      <div class="content">
+        <div class="quiz-item">
+          <p>Как записывается десятичное число 2 в двоичной системе?</p>
+          <span class="answer">10</span>
+        </div>
+        <div class="quiz-item">
+          <p>Процессор обрабатывает информацию:</p>
+          <span class="answer">в двоичном коде</span>
+        </div>
+        <div class="quiz-item">
+          <p>Сколько бит в слове ИНФОРМАТИКА (1 буква = 8 бит)?</p>
+          <span class="answer">88</span>
         </div>
       </div>
     </article>
 
-    <!-- 16.03.2026 -->
     <article class="post">
-      <time class="post-date" datetime="2026-03-16">16 марта 2026</time>
-      <div class="post-body">
-        <h2>📚 Прогноз успеваемости</h2>
-        <p>Время обучения: <strong>5 часов</strong></p>
-        <p class="highlight">Ожидаемый балл: <span>50.23</span></p>
+      <div class="date">05.05.2026</div>
+      <div class="content">
+        <p>📎 <a href="таблица%203.ods">таблица 3.ods</a></p>
       </div>
     </article>
 
-    <!-- 25.02.2026 -->
     <article class="post">
-      <time class="post-date" datetime="2026-02-25">25 февраля 2026</time>
-      <div class="post-body">
-        <h2>🤖 FAQ-бот</h2>
-        <ul class="faq">
-          <li>📦 Доставка: <strong>3–5 рабочих дней</strong></li>
-          <li>💳 Оплата: наличными и картой</li>
-        </ul>
+      <div class="date">27.04.2026</div>
+      <div class="content">
+        <p>📎 <a href="таблица%202.ods">таблица 2.ods</a></p>
       </div>
     </article>
 
-    <!-- 18.02.2026 -->
     <article class="post">
-      <time class="post-date" datetime="2026-02-18">18 февраля 2026</time>
-      <div class="post-body">
-        <h2>🐱 Классификация кошек</h2>
-        <div class="results">
-          <div class="result-row"><span class="label">Persian cat</span><span class="value">59.25%</span></div>
-          <div class="result-row"><span class="label">Egyptian Mau</span><span class="value">17.76%</span></div>
-          <div class="result-row"><span class="label">Tabby cat</span><span class="value">12.00%</span></div>
-        </div>
+      <div class="date">22.04.2026</div>
+      <div class="content">
+        <p>📎 <a href="tl.ods">таблица 1.ods</a></p>
       </div>
     </article>
 
-    <!-- 20.01.2026 -->
     <article class="post">
-      <time class="post-date" datetime="2026-01-20">20 января 2026</time>
-      <div class="post-body">
-        <h2>🔐 Криптография</h2>
-        <pre class="code-block"><code>Открытый ключ: (21, 5)
-Закрытый ключ: (21, 5)
-n = 1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789021</code></pre>
+      <div class="date">08.04.2026</div>
+      <div class="content">
+        <p>🖼️ <a href="pac.png">Проект базы данных (PNG)</a></p>
       </div>
     </article>
 
-    <!-- 19.01.2026 -->
     <article class="post">
-      <time class
+      <div class="date">01.04.2026</div>
+      <div class="content">
+        <p><strong>Итоговые результаты</strong></p>
+        <p>Ошибка на обучении (MSE): <code>0.000261</code></p>
+        <p>Ошибка на тесте (MSE): <code>0.000305</code></p>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="date">21.03.2026</div>
+      <div class="content">
+        <p>📊 Загрузила датасет. Точность: <strong>69%</strong></p>
+        <p>Сгенерировала данные: возраст, стаж, ДТП → решение по КАСКО.</p>
+        <p>👤 Клиент: возраст 30, стаж 5, ДТП 0 → Точность: <strong>87.5%</strong></p>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="date">16.03.2026</div>
+      <div class="content">
+        <p>📚 Студент занимался 5 часов</p>
+        <p>🎯 Прогноз баллов: <strong>50.23</strong></p>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="date">25.02.2026</div>
+      <div class="content">
+        <p>🤖 Бот-FAQ:</p>
+        <p>• Срок доставки — 3–5 рабочих дней</p>
+        <p>• Оплата: наличными</p>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="date">18.02.2026</div>
+      <div class="content">
+        <p>🐱 Классификация котов:</p>
+        <p>Persian cat: <strong>59.25%</strong></p>
+        <p>Egyptian Mau: <strong>17.76%</strong></p>
+        <p>Tabby cat: <strong>12.00%</strong></p>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="date">20.01.2026</div>
+      <div class="content">
+        <p>🔐 Криптография:</p>
+        <p>Открытый ключ: <code>(21, 5)</code></p>
+        <p>Закрытый ключ: <code>(21, 5)</code></p>
+        <p>Значение n: <code>1234567890...021</code></p>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="date">19.01.2026</div>
+      <div class="content">
+        <p><strong>Задание 1</strong></p>
+        <p>АПЕЛЬСИН → САЦЬНВЩЮ (k=17)</p>
+        <p>АБРИКОС → ЫЬЛГЕЙМ (k=27)</p>
+        <p><strong>Задание 2</strong></p>
+        <p>ФХНЗКЧ → ПРИВЕТ (k=5)</p>
+        <p>ЦЩЕБФ → ВЕСНА (k=0)</p>
+        <p><strong>Задание 3</strong></p>
+        <p>ЗМЕУ → СЦОЭ (k=10)</p>
+        <blockquote>Путешествие в тысячу миль начинается с одного шага (Лао Цзы)</blockquote>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="date">14.01.2026</div>
+      <div class="content">
+        <p>✉️ <a href="mailto:ezmeu@internet.ru">Напишите мне</a></p>
+        <p>🌐 Домен: <code>Evelina09-16.github.io</code></p>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="date">20.12.2025</div>
+      <div class="content">
+        <p>🎄 <a href="kolyadka2.odt">Поздравление с Рождеством</a></p>
+        <video controls>
+          <source src="new.mp4" type="video/mp4">
+          Ваш браузер не поддерживает видео.
+        </video>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="date">01.12.2025</div>
+      <div class="content">
+        <img src="Icons/icons8.png" alt="Новый год">
+        <p>🎅 <a href="Congratulations2026.html">Поздравление с 2026 годом</a></p>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="date">15.10.2025</div>
+      <div class="content">
+        <p>❄️ Сделала новогодние кроссворды для сайта:</p>
+        <p><a href="http://maria23-10.github.io/Hello-world/" target="_blank">Сайт моего друга</a></p>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="date">01.09.2025</div>
+      <div class="content">
+        <blockquote>Путешествие в тысячу миль начинается с одного шага (Лао Цзы)</blockquote>
+        <p>🚀 Перехожу из локальной файловой системы во Всемирную паутину!</p>
+        <p><small><a href="https://www.flaticon.com" target="_blank">Иконки: Flaticon</a></small></p>
+      </div>
+    </article>
+
+  </div>
+</body>
+</html>
